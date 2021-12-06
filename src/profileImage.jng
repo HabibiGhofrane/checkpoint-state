@@ -1,0 +1,7 @@
+
+<img style={{width:"400px"}}
+            //src={this.state.Person.imgSrc} 
+            src="https://static.vecteezy.com/ti/vecteur-libre/t2/1993889-belle-femme-latine-avatar-icone-personnage-gratuit-vectoriel.jpg"
+            alt="Photo de profil">
+
+            </img>

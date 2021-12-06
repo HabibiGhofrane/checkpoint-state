@@ -14,8 +14,8 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: #7b7f88;
+  min-height: 200vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -35,4 +35,37 @@
   to {
     transform: rotate(360deg);
   }
+}
+.App {
+  text-align: center;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+ font-size: 30px;
+}
+*{
+  background-color:black;
+  text-align: center;
+  padding: 25px;
+}
+h1{
+  color: white;
+  background-color: rgb(92, 69, 69);
+  padding: 5px;
+  border-style:double;
+  border-radius: 20px;
+}
+h1:hover{
+background-color:rgb(114, 102, 70);
+}
+button{
+  color: aliceblue;
+  background-color: rgb(109, 78, 78);
+  box-shadow: rgb(0, 0, 0) ;
+  border-radius: 10px;
+  border-color: cornsilk;
+  border-style: dotted;
+  font-style: italic;
+  
+}
+button:hover{
+background-color: rgb(83, 60, 81);
 }
