@@ -1,48 +1,48 @@
-import React, { useState } from 'react';
-import "./App.css"
-import profileImage from './profileImage.jng'
-  
-class App extends React.Component {
-  state = {
-    Person: {
-      fullName: "habibi ghofrane",
-      bio: "This is my bio",
-      imgSrc: {profileImage},
-      profession: "student"
-    },
-    show: true
-  };
+import React from "react";
 
-  handleShowPerson = () => {
+import Profile from "./Profile";
+
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      currentCount: 0,
+      shows: false,
+      text: "show"
+    };
+    this.handleClick = () => {
+      this.setState({ shows: !this.state.shows });
+      this.setState({ currentCount: 0 });
+
+      if (this.state.shows) {
+        this.setState({ text: "show" });
+      } else {
+        this.setState({ text: "hide" });
+      }
+    };
+  }
+
+  timer = () => {
     this.setState({
-      ...this.state,
-      show: !this.state.show
+      currentCount: this.state.currentCount + 1
     });
   };
-  
+  componentDidMount = () => {
+    this.intervalId = setInterval(this.timer, 1000);
+  };
 
   render() {
     return (
-      <>
-        {this.state.show && (
-          <>
-          <img style={{width:"400px"}}
-            //src={this.state.Person.imgSrc} 
-            src="https://static.vecteezy.com/ti/vecteur-libre/t2/1993889-belle-femme-latine-avatar-icone-personnage-gratuit-vectoriel.jpg"
-            alt="Photo de profil">
-
-            </img>
-            <h1>{this.state.Person.fullName}</h1>
-            <h1>{this.state.Person.bio} ......</h1>
-            <h1>{this.state.Person.profession}</h1>
-            <br></br>
-          </>
-        )}
-
-        <button onClick={this.handleShowPerson}>click here</button>
-      </>
+      <div>
+        <div className="profile">
+          {this.state.shows && <Profile />}
+          <button onClick={this.handleClick}>{this.state.text}</button>
+          <h1>{this.state.currentCount}</h1>
+        </div>
+      </div>
     );
   }
 }
-  
+
 export default App;
